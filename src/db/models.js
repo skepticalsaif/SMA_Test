@@ -1,12 +1,23 @@
 const Sequelize = require('sequelize')
 
-const db = new Sequelize({
-  dialect: 'sqlite',
-  storage: __dirname + '/test.db',
-  // database: 'socialmediadb1',
-  // username: 'socialmediauser',
-  // password: 'socialmediapass'
-})
+let db;
+
+if (process.env.DATABASE_URL) {
+  db = new Sequelize(process.env.DATABASE_URL)
+} else {
+  db = new Sequelize({
+    dialect: 'sqlite',
+    storage: __dirname + '/test.db'
+  })
+}
+
+// const db = new Sequelize({
+//   dialect: 'postgres',
+//   database: 'ddq3fd08q6f43',
+//   username: 'iihapdfvhrxztt',
+//   password: 'c31ce091e661b2b70fe37c60d718ef233f7404af0ddab775ee160daf938cce15',
+//   host: 'ec2-54-236-234-167.compute-1.amazonaws.com'
+// })
 
 // table attribute definitions
 const COL_ID_DEF = {
