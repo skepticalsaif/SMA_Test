@@ -14,8 +14,10 @@ const Sequelize = require('sequelize')
 const db = new Sequelize({
   dialect: 'postgres',
   dialectOptions: {
-    ssl: true,
-    rejectUnauthorized: false
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
+    }
   },
   database: 'ddq3fd08q6f43',
   port: 5432,
