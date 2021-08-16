@@ -20,8 +20,7 @@ const db = new Sequelize({
   port: 5432,
   username: 'iihapdfvhrxztt',
   password: 'c31ce091e661b2b70fe37c60d718ef233f7404af0ddab775ee160daf938cce15',
-  host: 'ec2-54-236-234-167.compute-1.amazonaws.com',
-  ssl: { rejectUnauthorized: false }
+  host: 'ec2-54-236-234-167.compute-1.amazonaws.com'
 })
 
 // table attribute definitions
